@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- SEO BÁSICO -->
+  <title>G. Marín | Cinematografía & Dron</title>
+  <meta name="description" content="Creación de vídeos de alto impacto, estrategia visual corporativa y filmación aérea para empresas y eventos privados de prestigio." />
+  <meta name="author" content="Guillermo Marín" />
+  
+  <!-- OPEN GRAPH (Tarjeta Digital para WhatsApp, FB, LinkedIn...) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="G. Marín | Cinematografía Comercial & Dron" />
+  <meta property="og:description" content="Catapulta la imagen de tu negocio o guarda el mejor recuerdo de tu evento con mis producciones cinemáticas 4K. Entra y mira mi trabajo." />
+  <meta property="og:url" content="https://www.tudominio.com/" />
+  <!-- Cuando subas la web, esta foto será la miniatura del link: -->
+  <meta property="og:image" content="https://www.tudominio.com/Gemini_Generated_Image_jcz96njcz96njcz9.png" /> 
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  
+  <!-- TWITTER CARDS -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="G. Marín | Cinematografía Comercial & Dron" />
+  <meta name="twitter:description" content="Eleva tus ventas y tu imagen. Producciones audiovisuales de alto vuelo." />
+  <meta name="twitter:image" content="https://www.tudominio.com/Gemini_Generated_Image_jcz96njcz96njcz9.png" />
+  
+  <!-- Tipografías Premium: Playfair Display para elegancia editorial, Jost para modernidad limpia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Paleta de colores de Lujo: Grafitos Oscuros y Oro suave */
+      --bg-main: #0B0B0E;         /* Negro grafito profundo */
+      --bg-sidebar: #121216;      /* Gris antracita */
+      --bg-card: rgba(255, 255, 255, 0.02); /* Transparencia estilo vidrio (glassmorphism) */
+      
+      --gold: #D4AF37;            /* Oro metálico sutil */
+      --gold-hover: #EEDB8E;      /* Oro iluminado */
+      
+      --text-title: #FFFFFF;      /* Blancos puros para contraste */
+      --text-body: #A1A1AA;       /* Grises atenuados para lectura relajada */
+      
+      --border-subtle: rgba(255, 255, 255, 0.05);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* Escala base equilibrada (Punto intermedio perfecto para leer bien sin perder el look 'Alejado') */
+    html { font-size: 13.5px; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background-color: transparent; /* Sustituido por el vídeo */
+      color: var(--text-body);
+      display: flex;
+      min-height: 100vh;
+      overflow: hidden; /* Cederemos el scroll al elemento MAIN */
+    }
+
+    #bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -2;
+      object-fit: cover;
+      filter: grayscale(30%); /* Otorga un look cinematográfico elegante */
+    }
+
+    #video-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(11, 11, 14, 0.82); /* Tinte grafito profundo que oscurece el vídeo para no saturar la vista */
+      z-index: -1;
+    }
+
+    /* ── BARRA LATERAL (NAVEGACIÓN) ── */
+    aside {
+      width: 300px;
+      height: 100vh;
+      background-color: rgba(18, 18, 22, 0.85); /* Semitransparente para ver el vuelo debajo */
+      backdrop-filter: blur(15px); /* Efecto vidrio ahumado (Glassmorphism) */
+      border-right: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 15px; /* Reducción de márgenes gruesos para PC */
+      position: fixed;
+      overflow-y: auto; /* Permite scroll del menú si el PC es muy pequeño horizontalmente */
+      overflow-x: hidden;
+      left: 0; top: 0;
+      z-index: 50;
+    }
+
+    .aside-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 60px;
+      width: 100%;
+    }
+
+    /* Mini Foto Circular en la barra lateral */
+    .profile-avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background-image: url('Gemini_Generated_Image_jsxie7jsxie7jsxi.png'); /* Gemini Generated */
+      background-size: cover;
+      background-position: center;
+      background-color: #222;
+      border: 1px solid var(--gold);
+      padding: 5px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      position: relative;
+    }
+    
+    .profile-avatar::after {
+      content: '';
+      position: absolute;
+      inset: 4px; border-radius: 50%;
+      border: 1px dashed rgba(212, 175, 55, 0.4);
+      pointer-events: none;
+    }
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-title);
+      margin-bottom: 5px;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-job {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--gold);
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+    }
+
+    .nav-btn {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 12px 18px; /* Ajuste orgánico para prevenir overflow lateral / choques en PC */
+      border: 1px solid transparent;
+      border-radius: 30px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .nav-btn::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--gold);
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 0.4s ease;
+    }
+
+    .nav-btn:hover {
+      color: var(--text-title);
+      border-color: var(--border-subtle);
+    }
+
+    .nav-btn.active {
+      color: var(--bg-main);
+      font-weight: 500;
+    }
+
+    .nav-btn.active::before {
+      opacity: 1;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-icon {
+      color: var(--gold);
+      background: rgba(212, 175, 55, 0.08); /* Fondo con ligero tinte dorado */
+      border: 1px solid rgba(212, 175, 55, 0.3); /* Borde elegante */
+      border-radius: 50%; /* Forma circular perfecta */
+      padding: 12px; /* Mayor respiro, se ve más grande e interactivo */
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.15); /* Resplandor pasivo */
+    }
+
+    .social-icon:hover {
+      color: var(--bg-main);
+      background: var(--gold); /* Inversión de colores premium */
+      transform: scale(1.15);
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.5); /* Resplandor activo muy visible */
+    }
+
+    /* ── ÁREA DE CONTENIDO (LAS INTERFACES) ── */
+    main {
+      margin-left: 300px; /* Evitar la barra lateral */
+      flex: 1;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      overflow-x: hidden;
+      position: relative;
+      /* Gradiente de fondo ultra-premium estilo Spotlight */
+      background: radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.05), transparent 40%),
+                  radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.02), transparent 40%);
+    }
+
+    main::-webkit-scrollbar { width: 8px; }
+    main::-webkit-scrollbar-track { background: var(--bg-main); }
+    main::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+
+    .interface {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      min-height: 100vh;
+      padding: 8vh 8%;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 1, 0.3, 1), visibility 0.6s;
+    }
+
+    .interface.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      position: relative; /* Para que determine la altura del main scroll */
+    }
+
+    /* Tipografía Estructural */
+    .sec-sub {
+      display: block;
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 400;
+      color: var(--text-title);
+      margin-bottom: 60px;
+      line-height: 1.1;
+    }
+
+    .sec-title span {
+      font-style: italic;
+      color: var(--text-body);
+    }
+
+    /* ── INTERFAZ 1: PERFIL (CON FOTO Y TRAYECTORIA) ── */
+    .perfil-layout {
+      display: flex;
+      gap: 6vw;
+      align-items: stretch;
+    }
+
+    .perfil-photo-wrapper {
+      flex: 0 0 350px;
+      position: relative;
+    }
+    
+    .perfil-photo {
+      width: 100%;
+      height: 480px;
+      background-image: url('Gemini_Generated_Image_jcz96njcz96njcz9.png'); /* Gemini Generated */
+      background-size: cover;
+      background-position: center;
+      border-radius: 4px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Marco dorado desfasado elegante (Eliminado por petición) */
+    .perfil-photo-wrapper::after {
+      display: none;
+    }
+
+    /* Si falla la imagen, mostrar texto */
+    .perfil-photo::before {
+      content: 'Cargando imagen...';
+      position: absolute;
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
+      color: rgba(255,255,255,0.2);
+      text-align: center;
+      z-index: -1;
+      font-size: 0.9rem;
+    }
+
+    .perfil-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .perfil-text p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-bottom: 25px;
+      font-weight: 300;
+    }
+
+    .perfil-text p.lead {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--text-title);
+      font-style: italic;
+      line-height: 1.5;
+      margin-bottom: 35px;
+    }
+
+    /* ── INTERFAZ 2: SERVICIOS ── */
+    .grid-services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 50px 40px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover {
+      background: rgba(255,255,255,0.04);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .card:hover::before { transform: scaleX(1); }
+
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      display: inline-block;
+      filter: grayscale(1) invert(0.8) sepia(1) hue-rotate(5deg) saturate(3);
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--text-title);
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      line-height: 1.7;
+      font-weight: 300;
+      font-size: 1rem;
+    }
+
+    /* ── INTERFAZ 3: TARIFAS ── */
+    .grid-pricing {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 35px;
+      align-items: start;
+    }
+
+    .price-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 50px 40px;
+      text-align: center;
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .price-card:hover { border-color: rgba(212, 175, 55, 0.4); transform: translateY(-5px); }
+
+    .price-card.popular {
+      background: rgba(212, 175, 55, 0.03); /* Brillo dorado muy suave */
+      border-color: rgba(212, 175, 55, 0.5);
+    }
+
+    .badge {
+      position: absolute;
+      top: -12px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--bg-main);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+    }
+
+    .price-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--text-title);
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+
+    .price {
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--gold);
+      margin-bottom: 30px;
+      line-height: 1;
+    }
+    .price small {
+      font-size: 1rem;
+      color: var(--text-body);
+      vertical-align: middle;
+    }
+
+    .price-card ul {
+      list-style: none;
+      margin: 0 0 40px 0;
+      text-align: left;
+    }
+
+    .price-card ul li {
+      font-size: 0.95rem;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-weight: 300;
+    }
+
+    .price-card ul li::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 0.9rem;
+    }
+
+    .action-btn {
+      width: 100%;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 15px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-family: 'Jost', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .action-btn:hover {
+      background: var(--gold);
+      color: var(--bg-main);
+      box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .price-card.popular .action-btn {
+      background: var(--gold);
+      color: var(--bg-main);
+    }
+    
+    .price-card.popular .action-btn:hover {
+      background: var(--gold-hover);
+      border-color: var(--gold-hover);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .review-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 30px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .review-card:hover {
+      border-color: rgba(212, 175, 55, 0.4);
+      transform: translateY(-5px);
+    }
+
+    .quote-icon {
+      color: var(--gold);
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+      opacity: 0.2;
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      line-height: 1;
+    }
+
+    .review-card p.quote-text {
+      font-style: italic;
+      color: var(--text-title);
+      line-height: 1.6;
+      margin-top: 10px;
+      margin-bottom: 25px;
+      font-weight: 300;
+    }
+
+    .review-author {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 15px;
+    }
+
+    .review-author strong {
+      color: var(--gold);
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    .review-author span {
+      color: var(--text-body);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+
+    /* ── RESPONSIVE DESIGN (MÓVILES Y TABLETS) ── */
+    @media (max-width: 990px) {
+      body { flex-direction: column; overflow: auto;}
+      
+      aside {
+        width: 100%;
+        height: auto;
+        flex-direction: column; /* Apilar elementos verticalmente en móviles */
+        justify-content: center;
+        padding: 15px 3%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-subtle);
+        background: rgba(18, 18, 22, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 100;
+        position: fixed;
+        left: 0; top: 0;
+      }
+      
+      .aside-info { flex-direction: row; margin: 0 auto; width: 100%; justify-content: center; gap: 15px; text-align: left; margin-bottom: 12px;}
+      .profile-avatar { width: 45px; height: 45px; margin: 0; border: none; box-shadow: none; padding: 0;}
+      .profile-avatar::after { display: none; }
+      .brand-name { font-size: 1.1rem; margin-bottom: 0;}
+      .brand-job { font-size: 0.65rem; }
+      
+      nav { flex-direction: row; flex-wrap: wrap; justify-content: center; width: 100%; gap: 6px; align-items: center; }
+      .nav-btn { padding: 6px 12px; font-size: 0.70rem; border-radius: 8px; letter-spacing: 1px;}
+      
+      .social-links { margin-top: 0; margin-left: 5px; }
+      .social-icon { padding: 6px; } /* Ajuste del resplandor de instagram para teléfono */
+      
+      main {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 130px; /* Incrementada para acomodar el menú de dos líneas si hace falta */
+        height: auto;
+        overflow: visible;
+      }
+
+      .interface { padding: 40px 5%; position: relative; display: none; visibility: visible; opacity: 1;}
+      .interface.active { display: block; animation: fadeIn 0.5s ease;}
+      
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);}}
+
+      .perfil-layout { flex-direction: column; }
+      .perfil-photo-wrapper { flex: none; width: 100%; max-width: 400px; margin: 0 auto; margin-bottom: 40px;}
+      .perfil-photo-wrapper::after { display: none; }
+      
+      .sec-title { font-size: 2.5rem; margin-bottom: 40px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- VÍDEO DE FONDO GLOBAL (CINEMÁTICO) -->
+  <video id="bg-video" autoplay loop muted playsinline>
+    <!-- Recurso gratuito 4K de Pexels (Simulando un espectacular vuelo de dron forestal) -->
+    <source src="https://videos.pexels.com/video-files/3015510/3015510-uhd_3840_2160_24fps.mp4" type="video/mp4">
+  </video>
+  <!-- Capa oscura para permitir legibilidad del texto -->
+  <div id="video-overlay"></div>
+
+  <!-- BARRA DE NAVEGACIÓN LATERAL -->
+  <aside>
+    <div class="aside-info">
+      <div class="profile-avatar"></div>
+      <div>
+        <h1 class="brand-name">G. Marín</h1>
+        <p class="brand-job">Fotógrafo</p>
+      </div>
+    </div>
+    
+    <nav>
+      <!-- Menú de Pestañas para intercambiar interfaces -->
+      <a href="#" class="nav-btn active" onclick="showInterface('perfil', this)">Perfil</a>
+      <a href="#" class="nav-btn" onclick="showInterface('servicios', this)">Servicios</a>
+      <a href="#" class="nav-btn" onclick="showInterface('tarifas', this)">Tarifas</a>
+      <a href="#" class="nav-btn" onclick="showInterface('reservas', this)">Reservas</a>
+      <a href="#" class="nav-btn" onclick="showInterface('reseñas', this)">Reseñas</a>
+      <a href="#" class="nav-btn" onclick="showInterface('contacto', this)">Contacto</a>
+      
+      <div class="social-links">
+        <a href="https://www.instagram.com/det.rasdelascamaras/" target="_blank" class="social-icon" title="Síguenos en Instagram">
+          <svg fill="currentColor" viewBox="0 0 24 24" width="22" height="22"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="main-content">
+
+    <!-- 1. INTERFAZ: PERFIL -->
+    <section id="perfil" class="interface active">
+      <span class="sec-sub">Sobre Mí</span>
+      <h2 class="sec-title">Una Visión <span>Diferente</span></h2>
+      
+      <div class="perfil-layout">
+        <div class="perfil-photo-wrapper">
+          <!-- Presentación visual (foto de la carpeta) -->
+          <div class="perfil-photo"></div>
+        </div>
+        
+        <div class="perfil-text">
+          <p class="lead">Llevo 10 años dedicándome a la creación de contenido audiovisual, y con el tiempo he aprendido que la técnica es solo una herramienta; lo verdaderamente importante es lo que te hace sentir.</p>
+          
+          <p>Soy una persona cercana que valora profundamente la magia de lo auténtico. Entiendo lo vital que es guardar esos instantes que no vuelven, desde las emociones tan a flor de piel en una celebración, hasta el enorme esfuerzo y la ilusión que hay detrás del negocio que tanto te cuesta levantar.</p>
+          
+          <p>Mi prioridad es que te sientas tan a gusto que olvides que estoy ahí. Me encanta pasar desapercibido para atrapar recuerdos naturales y genuinos, combinando una fotografía cercana con las perspectivas increíbles que me siguen brindando los drones de una manera siempre respetuosa.</p>
+          
+          <p>Tomo con mucha humildad la inmensa responsabilidad que supone que alguien me confíe atrapar momentos que serán irrepetibles. Por eso me implico de corazón, tratando cada historia y cada recuerdo con el máximo cariño para asegurarme de que el resultado que te lleves sea absolutamente único.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. INTERFAZ: SERVICIOS -->
+    <section id="servicios" class="interface">
+      <span class="sec-sub">Adaptabilidad Total</span>
+      <h2 class="sec-title">Cobertura <span>Exclusiva</span></h2>
+      
+      <p style="margin-bottom: 45px; font-size: 1.1rem; line-height: 1.8; color: var(--text-body); max-width: 900px; font-weight: 300;">
+        Con base operativa en la <strong>zona de Toledo</strong>, mi metodología de trabajo es camaleónica y se adapta estructuralmente a la naturaleza particular de cada comercio. Mantengo un fuerte lazo con la industria local a través de abundantes colaboraciones con negocios de todo tipo: desde acogedoras instalaciones de <strong>hostelería</strong> y vastas superficies de <strong>camping</strong>, hasta talleres y restaurantes. Sea cual sea tu negocio, el lente capturará y potenciará sin falta tus mejores virtudes mercantiles.
+      </p>
+      
+      <div class="grid-services">
+        <div class="card" style="border-color: rgba(212,175,55,0.4); background: rgba(212,175,55,0.03);">
+          <div class="card-icon">🎥</div>
+          <h3>Publicidad Corporativa</h3>
+          <p>Creamos vídeos comerciales y spots cinematográficos con alto componente narrativo específicamente ideados para que tu empresa multiplique su credibilidad y sobresalga ampliamente sobre sus competidores.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🚁</div>
+          <h3>Filmación Aérea con Dron</h3>
+          <p>El uso de la última tecnología dron no es un extra, es nuestro sello de identidad visual. Aportamos majestuosas secuencias que añaden escala, espectacularidad y una dimensión inmersiva y privilegiada.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">📸</div>
+          <h3>Fotografía de Impacto</h3>
+          <p>El complemento estratégico. Ofrecemos reportajes fotográficos pulcros en instalaciones, directivos comerciales y seguimientos corporativos para dotar a los dosieres de una grandiosa elegancia final.</p>
+        </div>
+        
+        <div class="card" style="border-color: rgba(255,255,255,0.08); background: rgba(255,255,255,0.01);">
+          <div class="card-icon">🥂</div>
+          <h3>Bodas & Celebraciones</h3>
+          <p>La misma calidad impecable aplicada a tu vida personal. Inmortalizamos momentos irrepetibles como bodas, bautizos, comuniones, cumpleaños y todo tipo de celebraciones privadas con suprema elegancia y discreción absoluta.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. INTERFAZ: TARIFAS -->
+    <section id="tarifas" class="interface">
+      <span class="sec-sub">Inversión</span>
+      <h2 class="sec-title">Tarifas <span>Profesionales</span></h2>
+      
+      <div class="grid-pricing">
+        
+        <!-- Tarifa 1 -->
+        <div class="price-card">
+          <h3>Pack Redes & Visibilidad</h3>
+          <div class="price">190<small>€</small></div>
+          <ul>
+            <li>15 Fotos profesionales de tu local o productos</li>
+            <li>1 Vídeo dinámico para Reels o TikTok (15-30 seg)</li>
+            <li>Edición llamativa para captar clientes al instante</li>
+            <li>Formatos verticales listos para subir desde el móvil</li>
+            <li>Entrega en 48h para publicar de inmediato</li>
+          </ul>
+          <a href="https://wa.me/34683192517?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Redes%20y%20Visibilidad%20(190%E2%82%AC)" target="_blank" class="action-btn" style="display: block; text-decoration: none; text-align: center; box-sizing: border-box;">Impulsar Redes</a>
+        </div>
+        
+        <!-- Tarifa 2 (Destacada: Medio/Premium) -->
+        <div class="price-card popular">
+          <div class="badge">Pack Más Contratado</div>
+          <h3>Pack Negocio & Dron</h3>
+          <div class="price">380<small>€</small></div>
+          <ul>
+            <li>Vídeo principal de tu empresa (hasta 2 minutos)</li>
+            <li>2 Vídeos cortos (Reels/TikTok) para lanzar anuncios</li>
+            <li>Vistas áreas espectaculares con Dron para destacar</li>
+            <li>Gran reportaje fotográfico comercial de instalaciones</li>
+            <li>Música atractiva e inserción de tu logotipo</li>
+            <li>Material probado para conseguir reservas y ventas</li>
+          </ul>
+          <a href="https://wa.me/34683192517?text=Hola,%20me%20gustar%C3%ADa%20contratar%20el%20Pack%20Negocio%20y%20Dron%20(380%E2%82%AC)" target="_blank" class="action-btn" style="display: block; text-decoration: none; text-align: center; box-sizing: border-box;">Destacar Negocio</a>
+        </div>
+        
+        <!-- Tarifa 3 -->
+        <div class="price-card">
+          <h3>Pack Campaña Expansión</h3>
+          <div class="price">590<small>€</small></div>
+          <ul>
+            <li>Todo lo del Pack Negocio + Jornada de grabación doble</li>
+            <li>Batería de Reels para que publiques durante todo un mes</li>
+            <li>Grabación con micrófono para entrevistas a clientes</li>
+            <li>Vuelo en Dron cubriendo zonas inmensas (Campings/Fincas)</li>
+            <li>Sesión de fotos completa para catálogo sin restricciones</li>
+            <li>Estrategia visual diseñada para anunciarse en Instagram</li>
+          </ul>
+          <a href="https://wa.me/34683192517?text=Hola,%20quisiera%20m%C3%A1s%20detalles%20sobre%20el%20Pack%20Campa%C3%B1a%20Expansi%C3%B3n%20(590%E2%82%AC)" target="_blank" class="action-btn" style="display: block; text-decoration: none; text-align: center; box-sizing: border-box;">Lanzar Campaña</a>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- 4. INTERFAZ: RESERVAS -->
+    <section id="reservas" class="interface">
+      <span class="sec-sub">Contratación</span>
+      <h2 class="sec-title">Política de <span>Reserva</span></h2>
+      
+      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 50px 8%; color: var(--text-body); font-weight: 300; line-height: 1.8;">
+        
+        <p style="font-size: 1.1rem; margin-bottom: 40px; color: var(--text-title); font-style: italic;">
+          Para garantizar la disponibilidad de la fecha y la preparación técnica necesaria (especialmente en servicios de vuelo de dron y logística de equipo), se establece el siguiente protocolo de reserva:
+        </p>
+
+        <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 15px; font-weight: 400;">1. Reserva y Pago Inicial</h3>
+        <p style="margin-bottom: 20px;">
+          Para formalizar la contratación de cualquier servicio, se requiere un pago anticipado del <strong>20% del presupuesto total</strong> en concepto de fianza/depósito de reserva. Este importe asegura tu fecha en mi calendario de trabajo.
+        </p>
+        <p style="margin-bottom: 40px; padding-left: 20px; border-left: 2px solid var(--border-subtle);">
+          <strong>Liquidación final:</strong> Una vez finalizado el trabajo y antes de la entrega del material definitivo, este 20% se descontará del total de la factura.
+        </p>
+
+        <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 15px; font-weight: 400;">2. Política de Cancelación y Modificaciones</h3>
+        <p style="margin-bottom: 20px;">
+          Entiendo que los planes pueden cambiar, pero el bloqueo de una fecha impide que otros clientes puedan contratar mis servicios. Por ello:
+        </p>
+        <ul style="margin-bottom: 40px; padding-left: 20px; list-style-type: none; color: var(--text-body);">
+          <li style="margin-bottom: 15px;">&bull; <strong>Aviso con antelación:</strong> Cualquier cancelación o cambio de fecha debe comunicarse con un mínimo de 48 horas antes de la cita acordada.</li>
+          <li>&bull; <strong>Cancelaciones tardías:</strong> Si la cancelación se realiza con menos de 48 horas de antelación, la fianza no será reembolsada, quedando en posesión del profesional como compensación por los daños causados, los costes de oportunidad y el tiempo de preparación invertido.</li>
+        </ul>
+
+        <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 15px; font-weight: 400;">3. Condiciones Meteorológicas (Especial Dron)</h3>
+        <p style="margin-bottom: 20px;">
+          Dado que el vuelo de drones depende de condiciones climáticas seguras (viento, lluvia, visibilidad):
+        </p>
+        <ul style="margin-bottom: 40px; padding-left: 20px; list-style-type: none; color: var(--text-body);">
+          <li style="margin-bottom: 15px;">&bull; Si las condiciones de seguridad impiden el vuelo según la normativa vigente, se ofrecerá <strong>una nueva fecha sin coste adicional</strong>.</li>
+          <li>&bull; En caso de no poder reajustar la agenda por parte del cliente, se evaluará la devolución o mantenimiento del depósito según el caso específico.</li>
+        </ul>
+        
+        <div style="text-align: center; margin-top: 50px;">
+          <a href="https://wa.me/34683192517?text=Hola,%20he%20visto%20tu%20pol%C3%ADtica%20de%20reservas%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20una%20fecha%20para%20contratarte." target="_blank" style="display: inline-block; background: var(--gold); color: #0B0B0E; text-decoration: none; padding: 15px 40px; text-transform: uppercase; letter-spacing: 2px; font-weight: 500; font-size: 0.9rem; border-radius: 30px; transition: all 0.3s ease; font-family: 'Jost', sans-serif;">Aceptar y Contactar</a>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. INTERFAZ: CONTACTO -->
+    <section id="contacto" class="interface">
+      <span class="sec-sub">Colaboración</span>
+      <h2 class="sec-title">Potenciemos tu <span>Visión</span></h2>
+      
+      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 50px 8%; color: var(--text-body); font-weight: 300; line-height: 1.8;">
+        
+        <h3 style="color: var(--text-title); font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 20px; font-weight: 400;">Cuéntame tu historia</h3>
+        
+        <p style="margin-bottom: 20px;">
+          Un buen trabajo visual no empieza con la cámara, sino escuchando. Ya sea que busques escalar tu negocio con contenido de alto impacto o capturar cada detalle de un evento que debe ser único, mi objetivo es asesorarte para que el resultado sea óptimo y verdaderamente profesional.
+        </p>
+
+        <p style="font-size: 1.3rem; margin: 35px 0; color: var(--gold); font-style: italic; border-left: 2px solid var(--gold); padding-left: 20px;">
+          "Tú pones la historia, yo pongo la técnica y la mirada para hacerla inolvidable."
+        </p>
+
+        <p style="margin-bottom: 50px;">
+          Cuéntame qué tienes en mente, cuáles son tus metas o cómo imaginas ese día especial. Me encargaré de guiarte paso a paso —desde la planificación de vuelo de dron hasta la edición final— para sacar el máximo provecho a cada toma.
+        </p>
+
+        <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 25px; font-weight: 400;">Vías de Contacto</h3>
+        <p style="margin-bottom: 20px;">Si prefieres ir al grano o tienes un briefing listo, hablemos directamente:</p>
+
+        <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 60px;">
+          <a href="https://wa.me/34683192517?text=%C2%A1Hola!%20He%20visto%20tu%20web%20y%20me%20gustar%C3%ADa%20que%20me%20asesoraras%20con..." target="_blank" style="display: inline-block; background: var(--bg-main); border: 1px solid var(--gold); color: var(--gold); text-decoration: none; padding: 15px 30px; border-radius: 30px; transition: all 0.3s ease; text-align: center; font-weight: 500;">📱 Asesoría Personalizada por WhatsApp</a>
+          
+          <a href="mailto:info@tuemail.com" style="display: inline-block; background: var(--bg-main); border: 1px solid var(--border-subtle); color: var(--text-body); text-decoration: none; padding: 15px 30px; border-radius: 30px; transition: all 0.3s ease; text-align: center;">✉️ Correo Electrónico</a>
+          
+          <a href="https://www.instagram.com/det.rasdelascamaras/" target="_blank" style="display: inline-block; background: var(--bg-main); border: 1px solid var(--border-subtle); color: var(--text-body); text-decoration: none; padding: 15px 30px; border-radius: 30px; transition: all 0.3s ease; text-align: center;">📸 Sígueme en el campo (@det.rasdelascamaras)</a>
+        </div>
+
+        <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 25px; font-weight: 400;">💡 Mi Enfoque a tu medida</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+          <div style="background: rgba(255,255,255,0.02); padding: 25px; border-radius: 6px; border-top: 2px solid var(--gold);">
+            <strong style="color: var(--text-title); display: block; margin-bottom: 10px;">Enfoque de Negocio</strong>
+            No solo grabo vídeos, creo herramientas de venta para tu marca.
+          </div>
+          <div style="background: rgba(255,255,255,0.02); padding: 25px; border-radius: 6px; border-top: 2px solid var(--gold);">
+            <strong style="color: var(--text-title); display: block; margin-bottom: 10px;">Enfoque de Eventos</strong>
+            Olvídate de la cámara y disfruta; yo me encargo de que cada emoción quede guardada con la mejor luz.
+          </div>
+          <div style="background: rgba(255,255,255,0.02); padding: 25px; border-radius: 6px; border-top: 2px solid var(--gold);">
+            <strong style="color: var(--text-title); display: block; margin-bottom: 10px;">Dron y Seguridad</strong>
+            Asesoría completa sobre viabilidad de vuelo y permisos para que tu evento sea espectacular y legal.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. INTERFAZ: RESEÑAS -->
+    <section id="reseñas" class="interface">
+      <span class="sec-sub">Testimonios</span>
+      <h2 class="sec-title">Lo que dicen los <span>Clientes</span></h2>
+      
+      <div class="reviews-grid">
+        
+        <!-- Review 1 -->
+        <div class="review-card">
+          <span class="quote-icon">"</span>
+          <p class="quote-text">Contratamos el Pack Negocio para nuestro restaurante y fue un acierto total. El vídeo del dron volando sobre nuestra terraza y grabando los fogones por dentro multiplicó literalmente nuestras reservas en menos de un mes.</p>
+          <div class="review-author">
+            <strong>Carlos M.</strong>
+            <span>Restaurante La Casona</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+          <span class="quote-icon">"</span>
+          <p class="quote-text">Increíble el servicio que nos dio Guillermo. Queríamos un vídeo que mostrara toda la extensión de nuestra finca para bodas. Entregó un material espectacular; las parejas quedan enamoradas antes de venir.</p>
+          <div class="review-author">
+            <strong>Elena y Roberto</strong>
+            <span>Finca Los Robles</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+          <span class="quote-icon">"</span>
+          <p class="quote-text">Cubrió el bautizo de nuestra hija con una elegancia y discreción absoluta. Tenemos recuerdos preciosos y naturales en los que casi ni notamos que estaba allí con la cámara. Un verdadero lujo.</p>
+          <div class="review-author">
+            <strong>Familia García</strong>
+            <span>Bautizo Privado</span>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="review-card">
+          <span class="quote-icon">"</span>
+          <p class="quote-text">Teníamos muchísima dificultad para plasmar en fotos lo inmenso que es nuestro camping y las piscinas. Con su dron consiguió que la envergadura del recinto se viera majestuosa en la web.</p>
+          <div class="review-author">
+            <strong>Dirección</strong>
+            <span>Camping Valle Dorado</span>
+          </div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="review-card">
+          <span class="quote-icon">"</span>
+          <p class="quote-text">Lanzamos nuestra tienda de artículos de ocio aventura y Guillermo creó una batería de vídeos verticales. ¡Se viralizaron dos vídeos al momento y las ventas online se dispararon en toda España!</p>
+          <div class="review-author">
+            <strong>Marcos R.</strong>
+            <span>Tienda Aventura Plus</span>
+          </div>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="review-card">
+          <span class="quote-icon">"</span>
+          <p class="quote-text">La calidad del spot publicitario que nos hizo no tiene nombre. Las tomas dinámicas dentro de la sala de pesas le dieron al gimnasio ese look comercial, moderno y agresivo que necesitábamos para captar socios.</p>
+          <div class="review-author">
+            <strong>David S.</strong>
+            <span>FitLife Gym</span>
+          </div>
+        </div>
+
+        <!-- Review 7 -->
+        <div class="review-card">
+          <span class="quote-icon">"</span>
+          <p class="quote-text">Como agencia inmobiliaria necesitamos diferenciarnos rápido. Guillermo graba los chalets de lujo que gestionamos desde el aire y, sinceramente, los vendemos en la mitad de tiempo. El cliente ya visualiza su vida allí.</p>
+          <div class="review-author">
+            <strong>Laura D.</strong>
+            <span>Inmobiliaria Premium</span>
+          </div>
+        </div>
+
+        <!-- Review 8 -->
+        <div class="review-card">
+          <span class="quote-icon">"</span>
+          <p class="quote-text">Quería renovar la imagen de mi cafetería de especialidad en Instagram y el reportaje de fotografía de Guillermo transmitió exactamente ese aura cálida, acogedora y de alta gama que yo buscaba proyectar.</p>
+          <div class="review-author">
+            <strong>Andrés L.</strong>
+            <span>Café Origen</span>
+          </div>
+        </div>
+
+        <!-- Review 9 -->
+        <div class="review-card">
+          <span class="quote-icon">"</span>
+          <p class="quote-text">No queríamos un vídeo tradicional de boda que durase horas. Guillermo nos entregó un highlight cinemático que parece, literalmente, el tráiler de una película. Sin duda la mejor inversión de la boda.</p>
+          <div class="review-author">
+            <strong>Sofía y Daniel</strong>
+            <span>Boda en Toledo</span>
+          </div>
+        </div>
+
+        <!-- Review 10 -->
+        <div class="review-card">
+          <span class="quote-icon">"</span>
+          <p class="quote-text">A la hora de actualizar nuestro catálogo, la fotografía de Guillermo ha aportado un nivel corporativo a nuestra planta que no sabíamos que teníamos. Entendió perfectamente el ángulo industrial.</p>
+          <div class="review-author">
+            <strong>Junta Directiva</strong>
+            <span>Industrias Metal</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lógica simple para intercambiar pantallas con estilo SPA -->
+  <script>
+    function showInterface(interfaceId, btnElement) {
+      // 1. Quitar clase "active" a todos los botones
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      // 2. Aplicar al botón actual
+      btnElement.classList.add('active');
+
+      // 3. Ocultar todas las interfaces y subirlas al top del scroll
+      document.querySelectorAll('.interface').forEach(section => {
+        section.classList.remove('active');
+      });
+
+      // 4. Mostrar solo la solicitada
+      const target = document.getElementById(interfaceId);
+      target.classList.add('active');
+      
+      // Reiniciar scroll del contenedor main si se cambia de pantalla en vista Desktop
+      if(window.innerWidth > 990) {
+          document.getElementById('main-content').scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+          // En móviles escrolear hasta arriba para simular cambio de pag
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  </script>
+</body>
+</html>
